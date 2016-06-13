@@ -42,7 +42,7 @@ cmake -DWITH_PIRANHA=yes -DINTEGER_CLASS=gmpxx
 
 All the work on Piranha polynomials and the `cmake` changes can be found in [#980](https://github.com/symengine/symengine/pull/980).
 
-###Iterators
+### Iterators
 
 Currently this is what the `print` functions for our univariate integer polynomials looked like : 
 
@@ -68,7 +68,7 @@ These methods are very similar and do not deserve to be separate functions. All 
 
 I stuck with the syntax of `it->first` and `it->second` for the unified iterators. Which means `operator*` needed to return a `std::pair<uint, integer_class>`. So, for SymEngine polynomials all I needed to do was return iterators to the internal dictionary and that was it. Not going into too much technicality, for Flint and Piranha I used custom iterators which had `operator++` defined on them and returned a pair whenever `it->` or `*it` was called on them. They basically iterated over the degree and returned only for non-zero coefficients for both the libraries. The actual implementation of the iterator scheme can be seen in [#985](https://github.com/symengine/symengine/pull/985).
 
-Initially I was happy with this approach as I was able to write (unifying the three) :
+Initially I was happy with this approach and was able to write (unifying the three) :
 
 ```
 string print(const UIntPolyBase& p)
