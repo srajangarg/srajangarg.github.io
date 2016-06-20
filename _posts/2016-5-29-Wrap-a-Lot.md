@@ -93,8 +93,8 @@ C =  add_upoly(*A, *B);
 
 ### Miscellaneous Work
 
-The names of the classes I refer to here are the new names. The old names were a little unintuitive, so decided to change them, along with introducing a new subfolder in the repository to hold all code related to polynomials (and their tests). Some code was also shifted to places more apt, all changes can be seen here [#960](https://github.com/symengine/symengine/pull/960).
+- The names of the classes I refer to here are the new names. The old names were a little unintuitive, so decided to change them, along with introducing a new subfolder in the repository to hold all code related to polynomials (and their tests). Some code was also shifted to places more apt, all changes can be seen here [#960](https://github.com/symengine/symengine/pull/960).
 
-There are a small number of miscellaneous changes that need to be worked out in the overall structure, here they are [#962](https://github.com/symengine/symengine/pull/962).
+- There are a small number of miscellaneous changes that need to be worked out in the overall structure, here they are [#962](https://github.com/symengine/symengine/pull/962).
 
 More on this and Flint next week! Goodbye!
