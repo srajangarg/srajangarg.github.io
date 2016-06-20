@@ -84,7 +84,7 @@ Isuru pointed out that instead of returning the `integer_class` in the pair, we 
 
 ### Miscellaneous Work
 
-I saw that in SymEngine, there were lots of redundant header file includes in many files. I wrote a short python script which makes a header dependency tree, and automatically removes header includes which are not needed. After some manual inspection of the changes I pushed in [#981](https://github.com/symengine/symengine/pull/981). It was really amazing to see the script flag more than 500 lines of redundant includes. The PR has not been merged yet, though.
+- I saw that in SymEngine, there were lots of redundant header file includes in many files. I wrote a short python script which makes a header dependency tree, and automatically removes header includes which are not needed. After some manual inspection of the changes I pushed in [#981](https://github.com/symengine/symengine/pull/981). It was really amazing to see the script flag more than 500 lines of redundant includes. The PR has not been merged yet, though.
 
 I will be working on higher level functionality like `gcd` in the coming week. Will keep you guys posted.
 

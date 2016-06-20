@@ -59,11 +59,11 @@ Isuru suggested a hint for a simple algorithm, but I have not been able to follo
 
 ### Miscellaneous Work
 
-Other functionalities like `multieval`, `derivative` and `get_lc` were also added for all the three intger polynomials.
+- Other functionalities like `multieval`, `derivative` and `get_lc` were also added for all the three intger polynomials.
 
-There was an error in the Flint documentation, which was related with incorrect ordering of the arguments being passed to the `divides` function. It was reported in [#267](https://github.com/wbhart/flint2/issues/267).
+- There was an error in the Flint documentation, which was related with incorrect ordering of the arguments being passed to the `divides` function. It was reported in [#267](https://github.com/wbhart/flint2/issues/267).
 
-Piranha required some implementations to be explicitly provided on the coefficient class, we are going to use. Thus, I had to overwrite some implementations like `gcd_impl`, `pow_impl` and `divexact_impl` for `SymEngine::intger_class` to work with `piranha::polynomial`.
+- Piranha required some implementations to be explicitly provided on the coefficient class, we are going to use. Thus, I had to overwrite some implementations like `gcd_impl`, `pow_impl` and `divexact_impl` for `SymEngine::intger_class` to work with `piranha::polynomial`.
 
 I will write `gcd` and `lcm` for SymEngine polynomials, and start on `Basic -> Poly` conversion to add to the coercion framework decided for SymEngine, soon.
 

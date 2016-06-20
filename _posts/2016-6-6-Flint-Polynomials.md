@@ -60,9 +60,9 @@ A `get_coeff()` function was also added to the polynomial base is a much needed 
 
 ### Miscellaneous Work
 
-There were some changes done to the polynomial structure before the flint polynomials were introduced. Constructor of the polynomials from vectors was removed, as it wasn't required. And a `from_vec` was added for the SymEngine polynomial dictionaries `UIntDict` and `UExprDict`. The changes can be seen here [#965](https://github.com/symengine/symengine/pull/965/).
+- There were some changes done to the polynomial structure before the flint polynomials were introduced. Constructor of the polynomials from vectors was removed, as it wasn't required. And a `from_vec` was added for the SymEngine polynomial dictionaries `UIntDict` and `UExprDict`. The changes can be seen here [#965](https://github.com/symengine/symengine/pull/965/).
 
-In Travis CI builds, SymEngine was using flint-2.4.4 from a static location. There's a [bug](https://github.com/wbhart/flint2/issues/217) that I encountered using this version, which dealt with incorrect header declaration in one of the flint files. Now, we clone the flint repository from  [wbhart/flint2](https://github.com/wbhart/flint2/) to use in the CI builds. The change is in [#973](https://github.com/symengine/symengine/pull/973).
+- In Travis CI builds, SymEngine was using flint-2.4.4 from a static location. There's a [bug](https://github.com/wbhart/flint2/issues/217) that I encountered using this version, which dealt with incorrect header declaration in one of the flint files. Now, we clone the flint repository from  [wbhart/flint2](https://github.com/wbhart/flint2/) to use in the CI builds. The change is in [#973](https://github.com/symengine/symengine/pull/973).
 
 I'm working on wrapping Piranha polynomials next week. After that is done, I plan to start getting higher level functionality like `gcd` and `factorize` ready.
 
