@@ -21,14 +21,14 @@ If the expression passed to `find_gen` is a
 
 * `Pow` : Few cases arise in if the expression is a `Pow`. If the exponent is a positive integer, it suffices to find the generators of only the base of the expression. If it is a negative integer, we update the current generator set with `base**(-1)`. For eg.
 
-```
+```c++
 find_gen((x + y)**4) = find_gen(x + y) = (x, y)
 find_gen((x**-2)) = (x**-1)
 ```
 
 If the exponent is not an integer, the situation becomes a little complicated. It would seem intuitive that the generators in this case would be the base powered to the generators of the exponent. Like so,
 
-```
+```c++
 find_gen(base**exp) = base**find_gen(exp)
 eg. 
 find_gen(2**(x+y)) = 2**find_gen(x+y) = (2**x, 2**y)
@@ -36,7 +36,7 @@ find_gen(2**(x+y)) = 2**find_gen(x+y) = (2**x, 2**y)
 
 This would seem to be working, but actually the same `find_gen` function cannot be used to get the generators of the exponent expression. The `find_gen` works in a different way once we are "inside" an exponent. Take for example :
 
-```
+```c++
 // Incorrect
 find_gen(2**(x + (1/2)))
 = 2**find_gen(x + (1/2))
@@ -50,7 +50,7 @@ find_gen(2**(x + (1/2)))
 
 `find_gen_pow` is another function which returns generators keeping in mind that the current expression it is dealing with is actually the exponent of another expression. So, it's behaviour varies from the simple `find_gen`. Here is another example : 
 
-```
+```c++
 // Incorrect
 find_gen(2**(x**2 + 3*x + (1/2))
 = 2**find_gen(x**2 + 3*x + (1/2))
@@ -66,8 +66,8 @@ find_gen(2**(x**2 + 3*x + (1/2))
 
 It is to be kept in mind that whenever we obtain a new potential generator, we update the current generator set. This may lead to modification of an already existing generator or add in a new one. This method thus takes care of some cases, not done by SymPy. A similar updation rule is followed for `find_gen_pow` where this is done on the coefficients of each expression instead of their powers. 
 
-```
-// "find_gen"
+`find_gen` :
+```c++
 gen_set = (x**(1/2))
 
 // addition
@@ -83,7 +83,8 @@ update_gen_set(x)
 gen_set = (x**(1/2))
 ```
 
-```
+`find_gen_pow` :
+```c++
 // "find_gen_pow"
 gen_set = (x/2)
 
@@ -106,7 +107,7 @@ I have a short description on the storage of these generators in the PR descript
 
 The next half of the week's work involved actually converting a `Basic` into a polynomial. The API is too look as follows
 
-```
+```c++
 RCP<Basic> UIntPoly::from_basic(Basic x);
 RCP<Basic> UIntPoly::from_basic(Basic x, Basic gen);
 ```
@@ -121,7 +122,7 @@ The actual conversion was not too difficult, it just had to be broken down into 
 
 - I was just testing out how the parser is working out with the basic to polynomial conversions. It is working very seamlessly, constructing polynomials has never been easier :smile:. It's as simple as 
 
-```
+```c++
 s = "2*(x+1)**10 + 3*(x+2)**5";
 poly = UIntPoly::from_basic(parse(s));
 
