@@ -67,6 +67,7 @@ find_gen(2**(x**2 + 3*x + (1/2))
 It is to be kept in mind that whenever we obtain a new potential generator, we update the current generator set. This may lead to modification of an already existing generator or add in a new one. This method thus takes care of some cases, not done by SymPy. A similar updation rule is followed for `find_gen_pow` where this is done on the coefficients of each expression instead of their powers. 
 
 `find_gen` :
+
 ```c++
 gen_set = (x**(1/2))
 
@@ -84,6 +85,7 @@ gen_set = (x**(1/2))
 ```
 
 `find_gen_pow` :
+
 ```c++
 // "find_gen_pow"
 gen_set = (x/2)
