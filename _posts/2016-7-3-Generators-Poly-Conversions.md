@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Finding Gnererators & Polynomial Conversions
+title: Finding Generators & Polynomial Conversions
 ---
 
 ### Overview
@@ -11,7 +11,7 @@ This week I continued my work from last week, but in a cleaner and structured fa
 
 You can refer to last week's post to know what a generator for a polynomial is at a preliminary level. An expression may have any number of generators, but our job is to get the least number of generators which will be able to construct the given expression. The only rule is that a generator cannot be a `Number` (ie `Rational` or `Integer`). So `sqrt(3)` and `pi` can be generators but `2` or `1/2` can't.
 
-Initially, the approach I was trying out was not general (as I catered to only the Univariate Int case), and expanding it to other polynomials would prove to be immensely difficult. Isuru suggested that the funciton should return all the possible generators. This will be the most general case for this function, and we can adapt to specific cases based on how many / which generators the function returns. I will try and summarize how the function works at a high level.
+Initially, the approach I was trying out was not general (as I catered to only the Univariate Int case), and expanding it to other polynomials would prove to be immensely difficult. Isuru suggested that the function should return all the possible generators. This will be the most general case for this function, and we can adapt to specific cases based on how many / which generators the function returns. I will try and summarize how the function works at a high level.
 
 If the expression passed to `find_gen` is a
 
@@ -119,7 +119,7 @@ The actual conversion was not too difficult, it just had to be broken down into 
 
 - Templatized `pow_upoly` so that it can be used by any general polynomial class. Also removed some redundant code in the `ExpandVisitor` related to said function. Can be seen in [#1010](https://github.com/symengine/symengine/pull/1010)
 
-- I was just testing out how the parser is working out with the basic to polynomial conversions. It is working very seamlessly, constructing polynomials has never been easier :smile:
+- I was just testing out how the parser is working out with the basic to polynomial conversions. It is working very seamlessly, constructing polynomials has never been easier :smile:. It's as simple as 
 
 ```
 s = "2*(x+1)**10 + 3*(x+2)**5";
