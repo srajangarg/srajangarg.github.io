@@ -84,7 +84,7 @@ class URatPolyBase : UNonExprPoly<D, rational_class>
 
 // a specific implementation
 // similar classes like UPiranhaPoly/UFlintPoly
-template <template <typename X, typename Y> class BaseType, typename D>
+template <template <typename X> class BaseType, typename D>
 class USymEnginePoly : BaseType<D>
 
 // end classes (few examples)
