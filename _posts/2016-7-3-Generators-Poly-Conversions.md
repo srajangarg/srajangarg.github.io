@@ -122,7 +122,7 @@ The actual conversion was not too difficult, it just had to be broken down into 
 
 - Templatized `pow_upoly` so that it can be used by any general polynomial class. Also removed some redundant code in the `ExpandVisitor` related to said function. Can be seen in [#1010](https://github.com/symengine/symengine/pull/1010)
 
-- I was just testing out how the parser is working out with the basic to polynomial conversions. It is working very seamlessly, constructing polynomials has never been easier :smile:. It's as simple as 
+- I was just testing out how the parser is working out with the basic to polynomial conversions. It is working very seamlessly, constructing polynomials has never been easier! It's as simple as 
 
 ```c++
 s = "2*(x+1)**10 + 3*(x+2)**5";
