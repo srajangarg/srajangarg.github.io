@@ -1,6 +1,6 @@
 ---
 layout: post
-title: Containers Multivariate Polynomials
+title: Containers for Multivariate Polynomials
 ---
 
 ### Overview
