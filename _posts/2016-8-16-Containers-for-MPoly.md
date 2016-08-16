@@ -44,7 +44,7 @@ and
 ```c++
 template <typename Poly, typename Container>
 set_basic get_translated_container(Container &x, Container &y, 
-								   const Poly &a, const Poly &b)
+                                   const Poly &a, const Poly &b)
 {
     vec_uint v1, v2;
     set_basic s;
